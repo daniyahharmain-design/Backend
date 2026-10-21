@@ -1,20 +1,31 @@
 const fs = require('fs');
+const path = require('path');
 
-// 1. Write a note
-fs.writeFileSync('notes.txt', 'Today I learned Node.js!');
+// const message = "This is my first file created with Node.js!"; step1 
 
-//  2. Read the note
-const content = fs.readFileSync('notes.txt', 'utf8');
-console.log(content);
+// step 2 
+// // const filePath = path.join(__dirname, 'my-message.txt');
 
-// 3.add a content in new line 
-fs.appendFileSync('notes.txt', '\nTomorrow I will practice JavaScript.');
+// if (fs.existsSync(filePath)) {
+//     const content = fs.readFileSync(filePath, 'utf8');
+
+//     console.log("File content:");
+//     console.log(content);
+// } else {
+//     console.log("File not found!");
+// }  
 
 
+// step 3 list of files 
 
-// 4.to check file is exist or not 
-if (fs.existsSync('notes.txt')) {
-    console.log('My notes file exists!');
-}
+// const files = fs.readdirSync('./'); to 
+const files = fs.readdirSync(__dirname);
+
+console.log("Files in current directory:");
+
+files.forEach((file, index) => {
+    console.log(`${index + 1}. ${file}`);
+});
+
 
 
