@@ -1,0 +1,2 @@
+Today I learned Node.js!
+Tomorrow I will practice JavaScript.
